@@ -1,0 +1,37 @@
+a{
+    text-decoration: none;
+}
+
+main{
+    font-family: "Poppins",sans-serif;
+}
+
+header{
+    font-family: "Poppins",sans-serif;
+}
+
+.btn{
+    background-color: #FEC802;
+    padding:0.5rem;
+    width:130px;
+    border-radius:11px;
+    color: white;
+}
+
+main .first{
+    background-color: #262626;
+    min-height:93vh;
+}
+
+span{
+    color : #FEB201;
+}
+
+.txt{
+    font-style: italic;
+    font-weight: 400;
+}
+
+.second{
+    background-color: #303030;
+}
