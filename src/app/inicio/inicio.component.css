@@ -16,11 +16,22 @@ header{
     width:130px;
     border-radius:11px;
     color: white;
+
+    transition: 0.5s;
+    opacity: 0.7;
+}
+
+.btn:hover{
+    opacity: 1;
 }
 
 main .first{
     background-color: #262626;
-    min-height:93vh;
+    min-height:95vh;
+}
+
+main .third{
+    background-color: #262626;
 }
 
 span{
@@ -34,4 +45,26 @@ span{
 
 .second{
     background-color: #303030;
+}
+.link{
+    color:red;
+}
+
+.link a:hover{
+    color : #FEB201;
+    transition: 0.5s;
+}
+
+footer{
+    background-color: #303030;
+    padding-bottom:0.1rem;
+}
+
+.icon{
+    transition: 0.5s;
+    border-bottom:#303030 2px solid;
+}
+.icon:hover{
+    transition: 0.5s;
+    border-bottom:2px solid white;
 }
