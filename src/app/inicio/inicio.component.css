@@ -30,9 +30,7 @@ main .first{
     min-height:95vh;
 }
 
-main .third{
-    background-color: #262626;
-}
+
 
 span{
     color : #FEB201;
@@ -62,9 +60,27 @@ footer{
 
 .icon{
     transition: 0.5s;
-    border-bottom:#303030 2px solid;
+    opacity: 0.5;
 }
 .icon:hover{
     transition: 0.5s;
-    border-bottom:2px solid white;
+    opacity: 1;
+}
+
+.img_values{
+    width:750px;
+    height:550px;
+    border-radius: 20px;
+}
+
+.img-thumbnail{
+    background-color: #303030;
+    height:50%;
+    width:50%;
+    border:none;
+}
+
+main .third{
+    background-color: #262626;
+    min-height:5rem;
 }
