@@ -1,13 +1,22 @@
 #img-bg{
     background-image: url('https://i.imgur.com/NsANX8S.png');
     
-    min-height: 695px;
+    min-height: 90vh;
   
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
 
+  a{
+    text-decoration: none;
+    color:#FEB201;
+    transition: 0.5s;
+  }
+
+  a:hover{
+    color: #FEC802;
+  }
   
 
 

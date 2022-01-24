@@ -1,0 +1,41 @@
+main{
+    background-color: #262626;
+    color:white;
+    min-height:50vh;
+    width:100%;
+}
+
+.profile{
+    background-color: #303030;
+    min-height:50vh;
+    
+    max-width: 60%;
+    border-radius: 4px;
+}
+
+.information{
+    background-color:transparent;
+    position: fixed;
+
+    width: 45%;
+    height:60%;
+    margin-left:53%;
+    
+}
+
+.img-thumbnail{
+    width:4rem;
+    height:4rem;
+    border-radius: 50%;
+    background-color: #303030;
+    border: none;
+}
+
+.post_image img{
+
+}
+
+.tag {
+    background-color: #FEB201;
+    border-radius: 4px;
+}
