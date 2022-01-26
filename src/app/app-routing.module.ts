@@ -9,7 +9,7 @@ const routes: Routes = [
   
   {path: "", redirectTo: "initial", pathMatch: "full"},
   {path: "feed", component: FeedComponent},
-  {path: "signUp", component: CadastroComponent},
+  {path: "signUp", component: CadastroComponent}, 
   {path: "signIn", component:  LoginComponent},
   {path: "initial" , component : InicioComponent}
 ];

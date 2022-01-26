@@ -17,6 +17,12 @@
   a:hover{
     color: #FEC802;
   }
+
+  button:hover{
+    background-color: #FEB201;
+    color:white;
+    font-weight: bold;
+  }
   
 
 
