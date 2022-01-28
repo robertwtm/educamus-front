@@ -12,6 +12,11 @@ import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { FeedComponent } from './feed/feed.component';
+import { PerfilProfComponent } from './perfil-prof/perfil-prof.component';
+import { PerfilAlunoComponent } from './perfil-aluno/perfil-aluno.component';
+import { MateriasEditComponent } from './materias-edit/materias-edit.component';
+import { ChatAlunoComponent } from './chat-aluno/chat-aluno.component';
+import { ChatProfComponent } from './chat-prof/chat-prof.component';
 
 
 @NgModule({
@@ -22,7 +27,12 @@ import { FeedComponent } from './feed/feed.component';
     LoginComponent,
     CadastroComponent,
     InicioComponent,
-    FeedComponent
+    FeedComponent,
+    PerfilProfComponent,
+    PerfilAlunoComponent,
+    MateriasEditComponent,
+    ChatAlunoComponent,
+    ChatProfComponent
   ],
   imports: [
     BrowserModule,
