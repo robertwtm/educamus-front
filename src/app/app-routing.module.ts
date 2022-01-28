@@ -7,6 +7,8 @@ import { FeedComponent } from './feed/feed.component';
 import { PerfilAlunoComponent } from './perfil-aluno/perfil-aluno.component';
 import { PerfilProfComponent } from './perfil-prof/perfil-prof.component';
 import { MateriasEditComponent } from './materias-edit/materias-edit.component';
+import { ChatAlunoComponent } from './chat-aluno/chat-aluno.component';
+import { ChatProfComponent } from './chat-prof/chat-prof.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'initial', pathMatch: 'full' },
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'perfilAluno', component: PerfilAlunoComponent },
   { path: 'perfilProf', component: PerfilProfComponent },
   { path: 'materiasEdit', component: MateriasEditComponent },
+  { path: 'chatAluno', component: ChatAlunoComponent },
+  { path: 'chatProf', component: ChatProfComponent },
 ];
 
 @NgModule({

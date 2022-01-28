@@ -15,6 +15,8 @@ import { FeedComponent } from './feed/feed.component';
 import { PerfilProfComponent } from './perfil-prof/perfil-prof.component';
 import { PerfilAlunoComponent } from './perfil-aluno/perfil-aluno.component';
 import { MateriasEditComponent } from './materias-edit/materias-edit.component';
+import { ChatAlunoComponent } from './chat-aluno/chat-aluno.component';
+import { ChatProfComponent } from './chat-prof/chat-prof.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { MateriasEditComponent } from './materias-edit/materias-edit.component';
     FeedComponent,
     PerfilProfComponent,
     PerfilAlunoComponent,
-    MateriasEditComponent
+    MateriasEditComponent,
+    ChatAlunoComponent,
+    ChatProfComponent
   ],
   imports: [
     BrowserModule,

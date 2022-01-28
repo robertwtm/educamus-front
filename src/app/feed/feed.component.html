@@ -28,14 +28,19 @@
                                             fill="white" />
                                     </svg>
                                 </a>
-                                <a href="#">
+                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    data-bs-whatever="@mdo" style="background-color: none;border:none;">
                                     <svg width="33" height="30" viewBox="0 0 33 30" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
                                             d="M31.1083 2.78033L20.9667 12H29.7V13.5H18.15V3H19.8V10.9393L29.9416 1.71967L31.1083 2.78033ZM12.0332 18H3.29996V16.5H14.85V27H13.2V19.0607L3.05833 28.2803L1.8916 27.2197L12.0332 18Z"
                                             fill="white" />
                                     </svg>
+                                </button>
+                                <a>
+
                                 </a>
+
                             </div>
                             <div class="tags d-flex ms-5 justify-content-between" style="min-width:27%;">
                                 <h6 class="tag p-2">
@@ -88,6 +93,9 @@
                             Ariana grande
                         </label>
                     </div>
+                    <button type="button" class="btn btn-primary mt-3 ms-3" data-bs-toggle="modal"
+                        data-bs-target="#postagemModal" data-bs-whatever="@mdo"
+                        style="background-color: #FEB201;border:none;">Adicionar postagem</button>
                 </div>
             </div>
 
@@ -151,5 +159,63 @@
         </div>
     </div>
 </main>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Enviar mensagem</h5>
+                <img src="../../assets/logo-02.png" alt="logo" height="70px" width="60%">
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Enviar Messagem ao prof</label>
+                        <textarea class="form-control" id="message-text"
+                            placeholder="Olá sou a giovana tenho um filho de 12 anos que precisa de aulas de reforço de português e matemática , meu contato (11)991846381, sou de SP capital"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn text-light " style="background-color: #FEB201;">Enviar
+                    mensagem</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal postagem" id="postagemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Criar postagem</h5>
+                <img src="../../assets/logo-02.png" alt="logo" height="70px" width="60%">
+
+
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="title" class="col-form-label">Descrição</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Link da imagem:</label>
+                        <input type="text" class="form-control" id="image_link">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn text-light" style="background-color: #FEB201;">Postar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <app-rodape></app-rodape>
