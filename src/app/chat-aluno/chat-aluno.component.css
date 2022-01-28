@@ -1,0 +1,29 @@
+main {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #262626;
+}
+
+.card {
+  width: 50%;
+  background-color: #303030;
+}
+
+.card-navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 15%;
+
+  border-bottom: 2px solid #262626;
+}
+
+.card-navbar img {
+  width: 44.08px;
+  height: 47.26px;
+  border-radius: 100px;
+}
+
+.card-footer {
+  background-color: #6c757d;
+}
