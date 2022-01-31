@@ -1,46 +1,70 @@
 <app-menu></app-menu>
 <main class=" p-3 mt-4 d-flex justify-content-start align-items-center flex-column text-light">
     <div class="title mt-3">
-        <h2 class="mt-5 mb-2">Perfil de Nome Aluno</h2>
+        <h2 class="mt-5 mb-2">Perfil de {{nome}}</h2>
     </div>
     <div class="configBlock  mt-2">
         <div class="avatar">
-            <img src="../../assets/img/giovana.png" alt="image user" />
+            <img src="{{foto}}" alt="image user" />
             <div class="avatar__details">
-                <h5 class="ms-3">Nome user</h5>
-                <h6 class="ms-3">BALBLACBAL</h6>
+                <h5 class="ms-3">{{nome}}</h5>
+                <h6 class="ms-3">Alune</h6>
             </div>
         </div>
 
         <div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
-            <label for="name mb-2">Nome</label>
-            <input type="text" name="nome" id="nome" placeholder="nome">
+            <label for="nome mb-2">Nome</label>
+            <input [(ngModel)]="user.nome" type="text" name="nome" id="nome" placeholder="Nome">
         </div>
 
         <div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
-            <label for="Username mb-2">Username</label>
-            <input type="text" name="Username" id="Username" placeholder="Username">
-        </div>
-        <div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
-            <label for="name mb-2">Telefone</label>
-            <input type="text" name="nome" id="nome" placeholder="(11) 99184-6381">
+            <label for="Username mb-2">Usuário</label>
+            <input [(ngModel)]="user.usuario" type="text" name="Username" id="Username" placeholder="Usuário">
         </div>
 
+        <div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
+            <label for="foto mb-2">Alterar foto</label>
+            <input [(ngModel)]="user.foto" type="text" name="foto" id="foto" placeholder="Link da nova foto">
+        </div>
+
+        <div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
+            <label for="Senha mb-2">Senha</label>
+            <input [(ngModel)]="user.senha" type="password" name="Senha" id="Senha" placeholder="Senha">
+        </div>
+
+        <div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
+            <label for="ConfirmarSenha mb-2">Confirmar Senha</label>
+            <input (input)="confirmSenha($event)" type="password" name="ConfirmarSenha" id="ConfirmarSenha" placeholder="Confirmar Senha">
+        </div>
+
+        <!-- Implementações futuras -->
+       <!--<div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
+            <label for="telefone mb-2">Telefone</label>
+            <input type="text" name="telefone" id="telefone" placeholder="(xx) xxxxx-xxxx">
+        </div>
+
+        Selecionando os pronomes isso tem que ser uma variável para mudar no resto do site
         <div class="form-group mb-3 mt-1">
-            <label for="tipo mb-2">Selecione seu gênero</label>
-            <select class="form-control mb-2" name="genero" id="tipo mt-2">
-                <option class="text-dark">Selecione seu gênero:</option>
-                <option class="text-dark" value="tbmnumsei">Numsei</option>
-                <option class="text-dark" value="numsei">esqeuci</option>
+            <label for="tipo mb-2">Como deseja ser chamado?</label>
+            <select class="form-control mb-2" name="pronomes" id="tipo mt-2">
+                <option class="text-dark">Selecione seus pronomes:</option>
+                <option class="text-dark" value="he/him">Ele/Dele</option>
+                <option class="text-dark" value="she/hers">Ela/Dela</option>
+                <option class="text-dark" value="they/them">Elu/Delu</option>
+                <option class="text-dark" value="other">Outro</option>
             </select>
         </div>
 
         <div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
             <label for="name mb-2">Idade</label>
-            <input type="text" name="idade" id="idade" placeholder="25">
-        </div>
+            <input type="number" name="idade" id="idade" placeholder="Idade">
+        </div>-->
 
-        <button type="submit" class="btn btn-success">Salvar</button>
+       <div class="d-flex justify-content-center my-2">
+        <button type="submit" class="btn btn-danger me-4"
+        routerLink="/feed">Cancelar</button>
+        <button type="submit" class="btn btn-success" (click)="atualizar()">Salvar</button>
+       </div>
     </div>
 
 </main>
