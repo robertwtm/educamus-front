@@ -8,12 +8,9 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-<<<<<<< Updated upstream
 
   id = environment.id
-
-  constructor() {}
-=======
+  
   constructor(
     private router: Router
   ) { }
@@ -27,7 +24,7 @@ export class MenuComponent implements OnInit {
     environment.foto = ''
     environment.id = 0
   }
->>>>>>> Stashed changes
+
 
 }
 
