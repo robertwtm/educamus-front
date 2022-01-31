@@ -34,10 +34,6 @@ main .first {
   min-height: 95vh;
 }
 
-span {
-  color: #feb201;
-}
-
 .txt {
   font-style: italic;
   font-weight: 400;
