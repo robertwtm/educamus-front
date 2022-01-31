@@ -10,11 +10,12 @@
     <div class="configBlock mt-2">
         <div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
             <label for="name mb-4">Adicionar matéria</label>
-            <input type="text" name="nome" id="nome" placeholder="nome">
+            <input  [(ngModel)]='tema.descricao' type="text" name="nome" placeholder="nome">
         </div>
 
 
-        <button type="submit" class="btn btn-success mb-4">Salvar</button>
+        <button type="submit" class="btn btn-success mb-4" (click)="cadastrar()">Salvar</button>
+
         <h4 class="mt-4 mb-3">Matérias ativas</h4>
 
 
