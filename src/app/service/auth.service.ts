@@ -22,10 +22,10 @@ export class AuthService {
     return this.http.post<User>('https://app-educamus.herokuapp.com/usuarios/cadastrar', user)
   }
 
-<<<<<<< Updated upstream
   getByIdUser(id: number): Observable<User>{
     return this.http.get<User>(`https://app-educamus.herokuapp.com/usuarios/${id}`)
-=======
+  }
+
   logado(){
     let ok: boolean = false
 
@@ -34,7 +34,7 @@ export class AuthService {
     }
 
     return ok
->>>>>>> Stashed changes
+
   }
 
 }
