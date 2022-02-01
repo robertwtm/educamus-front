@@ -27,7 +27,7 @@ export class PerfilAlunoComponent implements OnInit {
 
   ngOnInit(){
     if(environment.token == '') {
-      this.router.navigate(['/signUp'])
+      this.router.navigate(['/signIn'])
     }
 
     this.idUser = this.route.snapshot.params['id']
