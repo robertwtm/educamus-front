@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'perfilAluno', component: PerfilAlunoComponent },
   { path: 'perfilProf', component: PerfilProfComponent },
   { path: 'materiasEdit', component: MateriasEditComponent },
-  { path: 'chatAluno', component: ChatAlunoComponent },
+  { path: 'chatAluno/:id', component: ChatAlunoComponent },
   { path: 'chatProf', component: ChatProfComponent },
 ];
 
