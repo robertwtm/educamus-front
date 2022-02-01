@@ -1,4 +1,4 @@
-<app-menu>asda</app-menu>
+<app-menu></app-menu>
 
 <main class="p-5 mt-5">
     <div class="mt-5">
@@ -8,12 +8,11 @@
                     <div class="post_body" style="max-width: 50vw;min-width: 50vw;">
                         <div class="container d-flex justify-content-start align-items-center"
                             style="background-color: #303030;width:100%;">
-                            <img class="img-thumbnail me-4" src="../../assets/img/giovana.png" alt="user">
-                            <h5 class="p-1 mt-2">Jorgito fake</h5>
+                            <img class="img-thumbnail me-4" src="{{foto}}" alt="user">
+                            <h5 class="p-1 mt-2">{{nome}}</h5>
                         </div>
                         <div class="post_image">
-                            <img src="https://images.unsplash.com/photo-1610210752267-525f2160a313?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
-                                alt="example image">
+                            <img *ngFor='let item of postagem' src='{{item.foto}}' alt="example image">
                         </div>
                         <div class="icons_functions d-flex align-items-center justify-content-start">
                             <div class="p-3 ms-3">
@@ -36,27 +35,20 @@
                                             fill="white" />
                                     </svg>
                                 </button>
-                                <a>
-
-                                </a>
 
                             </div>
                             <div class="tags d-flex ms-5 justify-content-between" style="min-width:27%;">
                                 <h6 class="tag p-2">
-                                    Inglês aaaa
-                                </h6>
-                                <h6 class="tag p-2">
-                                    Português
+                                    {{post.tema}}
                                 </h6>
                             </div>
 
                         </div>
                         <h6 class="recom ms-4 mb-4 mt-2" style="color:#A5A5A5;">Recomendada por +3 alunes</h6>
                         <hr class="mt-3">
-                        <h6 class="ms-4 p-1" style="color:#A5A5A5;">Odeio meu trabalho e minha vida é sobre isso , odeio
-                            também essas crianças fake
-                            tudo artista
-                            mirim , odeio muito #gratidão #suicidio.</h6>
+                        <h6 class="ms-4 p-1" style="color:#A5A5A5;" *ngFor='let item of postagem'>
+                            {{item.descricao}}
+                        </h6>
                     </div>
 
                 </div>
@@ -65,52 +57,38 @@
                         <img class="img-thumbnail me-4" src="{{foto}}" alt="imagem do usuario"
                             style="height:6rem;width:6rem;">
                         <div class="{name_username}">
-                            <h2>{{nome}},</h2>
-                            <h6>vamos estudar hoje?
-                            </h6>
+                            <h2>{{nome}},<h6>vamos estudar hoje?</h6>
+                            </h2>
                         </div>
                     </div>
                     <div class="filter">
                         <h6 class="ms-3 mt-3" style="color:#A5A5A5;">Filtar profs por matérias</h6>
                     </div>
-                    <div class="form-check ms-3 mt-2">
+                    <div class="form-check ms-3 mt-2" *ngFor='let tema of listTemas'>
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                         <label class="form-check-label" for="flexCheckChecked">
-                            Inglês
+                            {{tema.descricao}}
                         </label>
                     </div>
 
-                    <div class="form-check ms-3 mt-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Português
-                        </label>
-                    </div>
-
-                    <div class="form-check ms-3 mt-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Ariana grande
-                        </label>
-                    </div>
 
                     <button type="button" class="btn btn-primary mt-3 ms-3" data-bs-toggle="modal"
                         data-bs-target="#postagemModal" data-bs-whatever="@mdo"
                         style="background-color: #FEB201;border:none;">Adicionar postagem</button>
 
 
-                        <br>
-                        <br>
+                    <br>
+                    <br>
 
 
                     <div div class="d-flex align-items-start">
-                        
+
                         <div class="nav flex-column nav-pills me-3 ms-3" id="v-pills-tab" role="tablist"
                             aria-orientation="vertical">
 
                             <button class="nav-link active" id="v-pills-todasPostagem-tab" data-bs-toggle="pill"
-                                data-bs-target="#v-pills-todasPostagem" type="button" role="tab" aria-controls="v-pills-todasPostagem"
-                                aria-selected="true">Todas as Postagens</button>
+                                data-bs-target="#v-pills-todasPostagem" type="button" role="tab"
+                                aria-controls="v-pills-todasPostagem" aria-selected="true">Todas as Postagens</button>
 
                             <button class="nav-link" id="v-pills-minhasPostagens-tab" data-bs-toggle="pill"
                                 data-bs-target="#v-pills-minhasPostagens" type="button" role="tab"
@@ -118,26 +96,27 @@
 
                             <button class="nav-link" id="v-pills-postagensPorMateria-tab" data-bs-toggle="pill"
                                 data-bs-target="#v-pills-postagensPorMateria" type="button" role="tab"
-                                aria-controls="v-pills-postagensPorMateria" aria-selected="false">Postagens por Matéria</button>
-                            
+                                aria-controls="v-pills-postagensPorMateria" aria-selected="false">Postagens por
+                                Matéria</button>
+
                         </div>
-                        
-                        
+
+
                         <div class="tab-content" id="v-pills-tabContent">
-                            
+
                             <div class="tab-pane fade show active" id="v-pills-todasPostagem" role="tabpanel"
                                 aria-labelledby="v-pills-todasPostagem-tab">
-                            Todas as postagens
+                                Todas as postagens
                             </div>
 
                             <div class="tab-pane fade" id="v-pills-minhasPostagens" role="tabpanel"
                                 aria-labelledby="v-pills-minhasPostagens-tab">
-                            Minhas Postagens
+                                Minhas Postagens
                             </div>
 
                             <div class="tab-pane fade" id="v-pills-postagensPorMateria" role="tabpanel"
                                 aria-labelledby="v-pills-postagensPorMateria-tab">
-                            Ponstagens Por Materia    
+                                Ponstagens Por Materia
                             </div>
 
                         </div>
@@ -255,18 +234,19 @@
                 <form>
                     <div class="mb-3">
                         <label for="title" class="col-form-label">Descrição</label>
-                        <input type="text" class="form-control" id="recipient-name">
+                        <input [(ngModel)]='post.descricao' type="text" class="form-control" id="recipient-name">
                     </div>
 
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Link da imagem:</label>
-                        <input type="text" class="form-control" id="image_link">
+                        <input [(ngModel)]='post.titulo' type="text" class="form-control" id="image_link">
                     </div>
 
                     <div class="mb-3">
                         <label for="message-text">Escolha um tema:</label>
                         <select name="tema" id="tema" class="form-control">
-                            <option value="">TEMAS</option>
+                            <option value="">Escolha um tema</option>
+                            <option *ngFor='let tema of listTemas' value="{{tema.id}}">{{tema.descricao}}</option>
                         </select>
                     </div>
 
@@ -274,7 +254,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn text-light" style="background-color: #FEB201;">Postar</button>
+                <button (click)="postar()" type="button" class="btn text-light"
+                    style="background-color: #FEB201;">Postar</button>
             </div>
         </div>
     </div>

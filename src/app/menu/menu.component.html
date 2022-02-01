@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="height:5rem;background-color: #303030;">
     <div class="container d-flex justify-content-between">
         <a routerLink="/feed">
-        <img height="40" class="p-1" src="../../assets/logo-02.png" alt="logo educamus">
+            <img height="40" class="p-1" src="../../assets/logo-02.png" alt="logo educamus">
         </a>
 
         <div class="d-flex">
@@ -28,8 +28,11 @@
                     </svg>
                 </a>
 
-                <a (click)='sair()' class="ms-4 point" width="35" height="30" viewBox="0 0 35 30"> Sair </a>
 
+                <button (click)='sair()' class="ms-4 text-light" width="45" height="30" viewBox="0 0 35 30"
+                    style="background-color: #f1c40f;padding:0.5rem 1rem;border-radius:15px;border:0;"> Sair </button>
+
+                <a (click)='sair()' class="ms-4 point" width="35" height="30" viewBox="0 0 35 30"> Sair </a>
 
             </div>
 
