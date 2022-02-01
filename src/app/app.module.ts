@@ -18,6 +18,8 @@ import { PerfilAlunoComponent } from './perfil-aluno/perfil-aluno.component';
 import { MateriasEditComponent } from './materias-edit/materias-edit.component';
 import { ChatAlunoComponent } from './chat-aluno/chat-aluno.component';
 import { ChatProfComponent } from './chat-prof/chat-prof.component';
+import { MateriaEditComponent } from './edit/materia-edit/materia-edit.component';
+import { MateriaDeleteComponent } from './delete/materia-delete/materia-delete.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { ChatProfComponent } from './chat-prof/chat-prof.component';
     PerfilAlunoComponent,
     MateriasEditComponent,
     ChatAlunoComponent,
-    ChatProfComponent
+    ChatProfComponent,
+    MateriaEditComponent,
+    MateriaDeleteComponent
   ],
   imports: [
     BrowserModule,
