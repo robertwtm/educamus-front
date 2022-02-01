@@ -9,6 +9,8 @@ import { PerfilProfComponent } from './perfil-prof/perfil-prof.component';
 import { MateriasEditComponent } from './materias-edit/materias-edit.component';
 import { ChatAlunoComponent } from './chat-aluno/chat-aluno.component';
 import { ChatProfComponent } from './chat-prof/chat-prof.component';
+import { MateriaDeleteComponent } from './delete/materia-delete/materia-delete.component';
+import { MateriaEditComponent } from './edit/materia-edit/materia-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'initial', pathMatch: 'full' },
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'materiasEdit', component: MateriasEditComponent },
   { path: 'chatAluno', component: ChatAlunoComponent },
   { path: 'chatProf', component: ChatProfComponent },
+  { path: 'materia-edit/:id', component: MateriaEditComponent},
+  { path: 'materia-delete/:id', component: MateriaDeleteComponent}
 ];
 
 @NgModule({
