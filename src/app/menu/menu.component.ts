@@ -10,12 +10,14 @@ import { environment } from 'src/environments/environment.prod';
 export class MenuComponent implements OnInit {
 
   id = environment.id
+  perfil = environment.tipo
   
   constructor(
     private router: Router
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(){ 
+  }
 
   sair(){
     this.router.navigate(['/initial'])
@@ -23,6 +25,16 @@ export class MenuComponent implements OnInit {
     environment.nome = ''
     environment.foto = ''
     environment.id = 0
+    environment.tipo = ''
+  }
+
+  alunoProf(){
+    if(this.perfil == 'adm'){
+      this.router.navigate(['/perfilProf', this.id])
+    }
+    else{
+      this.router.navigate(['/perfilAluno', this.id])
+    }
   }
 
 

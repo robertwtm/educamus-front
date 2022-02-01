@@ -27,7 +27,7 @@ export class PerfilAlunoComponent implements OnInit {
 
   ngOnInit(){
     if(environment.token == '') {
-      this.router.navigate(['/signUp'])
+      this.router.navigate(['/signIn'])
     }
 
     this.idUser = this.route.snapshot.params['id']
@@ -40,7 +40,7 @@ export class PerfilAlunoComponent implements OnInit {
     if(this.user.senha != this.confirmarSenha){
       alert('As senhas são diferentes.')
     }else{
-      this.auth.cadastrar(this.user).subscribe((resp: User) =>{
+      this.auth.atualizar(this.user).subscribe((resp: User) =>{
         this.user = resp
         this.router.navigate(["/feed"])
         alert('Usuário atualizado com sucesso, faça o login novamente.')

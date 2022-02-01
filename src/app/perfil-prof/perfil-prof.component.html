@@ -9,23 +9,40 @@
     </div>
     <div class="configBlock  mt-2">
         <div class="avatar">
-            <img src="../../assets/img/giovana.png" alt="image user" />
+            <img src="{{foto}}" alt="image user" />
             <div class="avatar__details">
-                <h5 class="ms-3">Nome user</h5>
-                <h6 class="ms-3">BALBLACBAL</h6>
+                <h5 class="ms-3">{{nome}}</h5>
+                <h6 class="ms-3">Professor(a/e)</h6>
             </div>
         </div>
 
         <div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
             <label for="name mb-2">Nome</label>
-            <input type="text" name="nome" id="nome" placeholder="nome">
+            <input [ngModel]="user.nome" type="text" name="nome" id="nome" placeholder="nome">
         </div>
 
         <div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
             <label for="Username mb-2">Username</label>
-            <input type="text" name="Username" id="Username" placeholder="Username">
+            <input [ngModel]="user.usuario" type="text" name="Username" id="Username" placeholder="Username">
         </div>
+
         <div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
+            <label for="foto mb-2">Alterar foto</label>
+            <input [(ngModel)]="user.foto" type="text" name="foto" id="foto" placeholder="Link da nova foto">
+        </div>
+
+        <div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
+            <label for="Senha mb-2">Senha</label>
+            <input [(ngModel)]="user.senha" type="password" name="Senha" id="Senha" placeholder="Senha">
+        </div>
+
+        <div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
+            <label for="ConfirmarSenha mb-2">Confirmar Senha</label>
+            <input (input)="confirmSenha($event)" type="password" name="ConfirmarSenha" id="ConfirmarSenha" placeholder="Confirmar Senha">
+        </div>
+
+        <!-- Implementações futuras -->
+        <!--<div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
             <label for="name mb-2">Telefone</label>
             <input type="text" name="nome" id="nome" placeholder="(11) 99184-6381">
         </div>
@@ -42,9 +59,13 @@
         <div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
             <label for="name mb-2">Idade</label>
             <input type="text" name="idade" id="idade" placeholder="25">
-        </div>
+        </div>-->
 
-        <button type="submit" class="btn btn-success">Salvar</button>
+        <div class="d-flex justify-content-center my-2">
+            <button type="submit" class="btn btn-danger me-4"
+            routerLink="/feed">Cancelar</button>
+            <button type="submit" class="btn btn-success" (click)="atualizar()">Salvar</button>
+       </div>
     </div>
 
 </main>
