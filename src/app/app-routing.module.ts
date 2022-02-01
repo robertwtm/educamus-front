@@ -11,6 +11,8 @@ import { ChatAlunoComponent } from './chat-aluno/chat-aluno.component';
 import { ChatProfComponent } from './chat-prof/chat-prof.component';
 import { MateriaDeleteComponent } from './delete/materia-delete/materia-delete.component';
 import { MateriaEditComponent } from './edit/materia-edit/materia-edit.component';
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
+import { PostagemDeleteComponent } from './edit/postagem-delete/postagem-delete.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'initial', pathMatch: 'full' },
@@ -23,8 +25,10 @@ const routes: Routes = [
   { path: 'materiasEdit', component: MateriasEditComponent },
   { path: 'chatAluno/:id', component: ChatAlunoComponent },
   { path: 'chatProf', component: ChatProfComponent },
-  { path: 'materia-edit/:id', component: MateriaEditComponent},
-  { path: 'materia-delete/:id', component: MateriaDeleteComponent}
+  { path: 'materia-edit/:id', component: MateriaEditComponent },
+  { path: 'materia-delete/:id', component: MateriaDeleteComponent },
+  { path: 'postagem-edit/:id', component: PostagemEditComponent },
+  { path: 'postagem-delete/:id', component: PostagemDeleteComponent },
 ];
 
 @NgModule({

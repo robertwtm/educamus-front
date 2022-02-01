@@ -75,14 +75,12 @@ export class FeedComponent implements OnInit {
     this.post.tema = this.tema;
     this.user.id = this.idUser;
     this.post.usuario = this.user;
+
     console.log(this.post.usuario);
     console.log(this.post.tema);
-    console.log(this.post);
-    console.log(
-      this.listTemas.map((s) => {
-        console.log(s.descricao);
-      })
-    );
+    console.log(this.post.foto);
+    console.log(this.post.texto);
+    console.log(this.post.titulo);
 
     this.postagemService.postPostagem(this.post).subscribe((resp: Postagem) => {
       console.log(this.post);
