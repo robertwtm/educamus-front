@@ -24,6 +24,9 @@ export class MateriasEditComponent implements OnInit {
       alert('Sua seção, expirou. Faça o login novamente!')
       this.router.navigate(['/signIn'])
     }
+
+    this.findAllMaterias()
+    
   }
 
   findAllMaterias(){
@@ -40,8 +43,6 @@ export class MateriasEditComponent implements OnInit {
       this.tema = new Tema()
     })
  }
-
-
 
 }
 

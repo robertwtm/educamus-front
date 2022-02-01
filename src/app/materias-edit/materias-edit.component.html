@@ -10,7 +10,7 @@
     <div class="configBlock mt-2">
         <div class="d-flex mb-3 mt-1 flex-column justify-content-start form-group">
             <label for="name mb-4">Adicionar matéria</label>
-            <input  [(ngModel)]='tema.descricao' type="text" name="nome" placeholder="nome">
+            <input [(ngModel)]='tema.descricao' type="text" name="nome" placeholder="nome">
         </div>
 
 
@@ -22,14 +22,18 @@
         <table class="table table-dark">
             <thead>
                 <tr>
-                    <th scope="col">Nome</th>
+                    <th scope="col" class="text-center">ID</th>
+                    <th scope="col" class="text-center">Nome</th>
+                    <th scope="col" class="text-center">Modificações</th>
                 </tr>
             </thead>
+
             <tbody>
-                <tr>
-                    <td>nomito</td>
+                <tr *ngFor='let materia of listaTemas'>
+                    <th>{{materia.id}}</th>
+                    <td>{{materia.descricao}}</td>
                     <td class="d-flex justify-content-end">
-                        <button class="btn btn-info">Editar</button>
+                        <button class="btn btn-info mr-3">Editar</button>
                         <button class="btn btn-danger">Apagar</button>
                     </td>
                 </tr>
