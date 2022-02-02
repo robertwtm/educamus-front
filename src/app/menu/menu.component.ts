@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Postagem } from '../model/Postagem';
+import { PostagemService } from '../service/postagem.service'; 
 
 @Component({
   selector: 'app-menu',
@@ -11,7 +13,14 @@ export class MenuComponent implements OnInit {
   id = environment.id;
   perfil = environment.tipo;
 
-  constructor(private router: Router) {}
+  postagem: Postagem = new Postagem;
+  listaPostagens: Postagem[];
+  tituloPost: string;
+
+  constructor(
+    private router: Router,
+    private postagemService: PostagemService,
+  ) {}
 
   ngOnInit() {}
 
@@ -29,6 +38,23 @@ export class MenuComponent implements OnInit {
       this.router.navigate(['/perfilProf', this.id]);
     } else {
       this.router.navigate(['/perfilAluno', this.id]);
+    }
+  }
+
+  getAllPostagem(){
+    this.postagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
+      this.listaPostagens = resp
+    })
+  }
+
+  findByTituloPostagem(){
+
+    if(this.tituloPost == ''){
+      this.getAllPostagem()
+    } else {
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[])=>{
+        this.listaPostagens = resp
+      })
     }
   }
 }

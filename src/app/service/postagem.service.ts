@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 
+
 @Injectable({
   providedIn: 'root',
 })
