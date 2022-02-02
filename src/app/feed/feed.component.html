@@ -324,7 +324,7 @@
 
                 <div class="mb-3">
                     <label for="message-text">Escolha um tema:</label>
-                    <select name="tema" id="tema" class="form-control">
+                    <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)="findByIdTema">
                         <option value="">Escolha um tema</option>
                         <option [(ngModel)]="idTema" *ngFor='let tema of listTemas' value="{{tema.id}}">
                             {{tema.descricao}}</option>
