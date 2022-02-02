@@ -1,116 +1,241 @@
-<app-menu>asda</app-menu>
+<app-menu></app-menu>
 
 <main class="p-5 mt-5">
     <div class="mt-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg me-2 mb-3 profile d-flex justify-content-center">
-                    <div class="post_body" style="max-width: 50vw;min-width: 50vw;">
-                        <div class="container d-flex justify-content-start align-items-center"
-                            style="background-color: #303030;width:100%;">
-                            <img class="img-thumbnail me-4" src="../../assets/img/giovana.png" alt="user">
-                            <h5 class="p-1 mt-2">Jorgito fake</h5>
-                        </div>
-                        <div class="post_image">
-                            <img src="https://images.unsplash.com/photo-1610210752267-525f2160a313?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
-                                alt="example image">
-                        </div>
-                        <div class="icons_functions d-flex align-items-center justify-content-start">
-                            <div class="p-3 ms-3">
-                                <a href="#" class="me-4">
-                                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="2.1875" y="10.9375" width="0.875" height="16.625" fill="white"
-                                            stroke="white" stroke-width="0.875" />
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M20.1248 11.9583V3.20547C20.1248 2.40164 19.4732 1.75 18.6694 1.75C17.9756 1.75 17.3782 2.23971 17.2422 2.92003L16.865 4.80604C16.0491 8.88523 12.9771 12.081 9.0415 13.1165V25.807C9.0415 26.4048 9.49344 26.9059 10.0881 26.9675L25.9223 28.6055C26.5301 28.6684 27.0835 28.2516 27.1909 27.6501L29.748 13.3301C29.8757 12.615 29.3259 11.9583 28.5995 11.9583H20.1248ZM7.2915 11.6667C11.1998 11.2324 14.3777 8.31883 15.1489 4.46284L15.5261 2.57683C15.8258 1.07851 17.1414 0 18.6694 0C20.4397 0 21.8748 1.43514 21.8748 3.20547V10.2083H28.5995C30.4155 10.2083 31.79 11.85 31.4708 13.6377L28.9136 27.9577C28.6451 29.4615 27.2618 30.5034 25.7423 30.3462L9.90805 28.7082C8.42135 28.5544 7.2915 27.3016 7.2915 25.807V11.6667Z"
-                                            fill="white" />
-                                    </svg>
-                                </a>
-                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                    data-bs-whatever="@mdo" style="background-color: none;border:none;">
-                                    <svg width="33" height="30" viewBox="0 0 33 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M31.1083 2.78033L20.9667 12H29.7V13.5H18.15V3H19.8V10.9393L29.9416 1.71967L31.1083 2.78033ZM12.0332 18H3.29996V16.5H14.85V27H13.2V19.0607L3.05833 28.2803L1.8916 27.2197L12.0332 18Z"
-                                            fill="white" />
-                                    </svg>
-                                </button>
-                                <a>
+            <div class="row" style="border: 5px solid  #262626;">
 
-                                </a>
+                <div class="tab-content" id="v-pills-tabContent">
 
-                            </div>
-                            <div class="tags d-flex ms-5 justify-content-between" style="min-width:27%;">
-                                <h6 class="tag p-2">
-                                    Inglês aaaa
+
+                    <div class="tab-pane fade show active" id="v-pills-todasPostagem" role="tabpanel"
+                        aria-labelledby="v-pills-todasPostagem-tab">
+
+
+                        <div class="col-lg  mb-3 profile justify-content-center mt-1"
+                            style="border: 3px solid #262626;">
+
+
+                            <div class="post_body mt-3 mb-3" style="width:auto;border: 5px solid  #262626;"
+                                *ngFor='let item of postagem'>
+                                <div class="container d-flex justify-content-start align-items-center"
+                                    style="background-color: #303030;width:100%;">
+                                    <img class="img-thumbnail" src="{{foto}}" alt="user">
+                                    <h5 class="p-1 mt-2 ms-2">{{nome}}</h5>
+
+
+                                </div>
+                                <div class="post_image ms-1 d-flex justify-content-center">
+                                    <img src='{{item.foto}}' alt="example image" style="max-width:100%;">
+                                </div>
+                                <div class="icons_functions d-flex align-items-center justify-content-start">
+                                    <div class="p-3 ms-3">
+                                        <a href="#" class="me-4">
+                                            <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="2.1875" y="10.9375" width="0.875" height="16.625" fill="white"
+                                                    stroke="white" stroke-width="0.875" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M20.1248 11.9583V3.20547C20.1248 2.40164 19.4732 1.75 18.6694 1.75C17.9756 1.75 17.3782 2.23971 17.2422 2.92003L16.865 4.80604C16.0491 8.88523 12.9771 12.081 9.0415 13.1165V25.807C9.0415 26.4048 9.49344 26.9059 10.0881 26.9675L25.9223 28.6055C26.5301 28.6684 27.0835 28.2516 27.1909 27.6501L29.748 13.3301C29.8757 12.615 29.3259 11.9583 28.5995 11.9583H20.1248ZM7.2915 11.6667C11.1998 11.2324 14.3777 8.31883 15.1489 4.46284L15.5261 2.57683C15.8258 1.07851 17.1414 0 18.6694 0C20.4397 0 21.8748 1.43514 21.8748 3.20547V10.2083H28.5995C30.4155 10.2083 31.79 11.85 31.4708 13.6377L28.9136 27.9577C28.6451 29.4615 27.2618 30.5034 25.7423 30.3462L9.90805 28.7082C8.42135 28.5544 7.2915 27.3016 7.2915 25.807V11.6667Z"
+                                                    fill="white" />
+                                            </svg>
+                                        </a>
+                                        <button type="button" class="btn" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal" data-bs-whatever="@mdo"
+                                            style="background-color: none;border:none;">
+                                            <svg width="33" height="30" viewBox="0 0 33 30" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M31.1083 2.78033L20.9667 12H29.7V13.5H18.15V3H19.8V10.9393L29.9416 1.71967L31.1083 2.78033ZM12.0332 18H3.29996V16.5H14.85V27H13.2V19.0607L3.05833 28.2803L1.8916 27.2197L12.0332 18Z"
+                                                    fill="white" />
+                                            </svg>
+                                        </button>
+
+                                    </div>
+                                    <div class="tags d-flex ms-5 justify-content-between" style="min-width:27%;">
+                                        <h6 class="tag p-2">
+                                            {{post.tema}}
+                                        </h6>
+                                    </div>
+
+                                </div>
+                                <hr class="mt-3">
+                                <h6 class="ms-4 p-1" style="color:#A5A5A5;">
+                                    {{item.texto}}
                                 </h6>
-                                <h6 class="tag p-2">
-                                    Português
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-minhasPostagens" role="tabpanel"
+                        aria-labelledby="v-pills-minhasPostagens-tab">
+
+
+                        <div class="col-lg  mb-3 profile justify-content-center mt-1"
+                            style="border: 3px solid #262626;">
+
+
+                            <div class="post_body mt-3 mb-3" style="width:auto;border: 5px solid  #262626;"
+                                *ngFor='let item of user.postagem'>
+                                <div class="container d-flex justify-content-start align-items-center"
+                                    style="background-color: #303030;width:100%;">
+                                    <img class="img-thumbnail" src="{{foto}}" alt="user">
+                                    <h5 class="p-1 mt-2 ms-2">{{nome}}</h5>
+
+                                    <a [routerLink]="['/postagem-edit', idUser]" class="text-info mr-3"
+                                        href="#">Editar</a> <a [routerLink]="['/postagem-delete', idUser]"
+                                        class="text-danger" href="#">Apagar</a>
+
+                                </div>
+                                <div class="post_image ms-1 d-flex justify-content-center">
+                                    <img src='{{item.foto}}' alt="example image" style="max-width:100%;">
+                                </div>
+                                <div class="icons_functions d-flex align-items-center justify-content-start">
+                                    <div class="p-3 ms-3">
+                                        <a href="#" class="me-4">
+                                            <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="2.1875" y="10.9375" width="0.875" height="16.625" fill="white"
+                                                    stroke="white" stroke-width="0.875" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M20.1248 11.9583V3.20547C20.1248 2.40164 19.4732 1.75 18.6694 1.75C17.9756 1.75 17.3782 2.23971 17.2422 2.92003L16.865 4.80604C16.0491 8.88523 12.9771 12.081 9.0415 13.1165V25.807C9.0415 26.4048 9.49344 26.9059 10.0881 26.9675L25.9223 28.6055C26.5301 28.6684 27.0835 28.2516 27.1909 27.6501L29.748 13.3301C29.8757 12.615 29.3259 11.9583 28.5995 11.9583H20.1248ZM7.2915 11.6667C11.1998 11.2324 14.3777 8.31883 15.1489 4.46284L15.5261 2.57683C15.8258 1.07851 17.1414 0 18.6694 0C20.4397 0 21.8748 1.43514 21.8748 3.20547V10.2083H28.5995C30.4155 10.2083 31.79 11.85 31.4708 13.6377L28.9136 27.9577C28.6451 29.4615 27.2618 30.5034 25.7423 30.3462L9.90805 28.7082C8.42135 28.5544 7.2915 27.3016 7.2915 25.807V11.6667Z"
+                                                    fill="white" />
+                                            </svg>
+                                        </a>
+                                        <button type="button" class="btn" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal" data-bs-whatever="@mdo"
+                                            style="background-color: none;border:none;">
+                                            <svg width="33" height="30" viewBox="0 0 33 30" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M31.1083 2.78033L20.9667 12H29.7V13.5H18.15V3H19.8V10.9393L29.9416 1.71967L31.1083 2.78033ZM12.0332 18H3.29996V16.5H14.85V27H13.2V19.0607L3.05833 28.2803L1.8916 27.2197L12.0332 18Z"
+                                                    fill="white" />
+                                            </svg>
+                                        </button>
+
+                                    </div>
+                                    <div class="tags d-flex ms-5 justify-content-between" style="min-width:27%;">
+                                        <h6 class="tag p-2">
+                                            {{post.tema}}
+                                        </h6>
+                                    </div>
+
+                                </div>
+                                <hr class="mt-3">
+                                <h6 class="ms-4 p-1" style="color:#A5A5A5;">
+                                    {{item.texto}}
                                 </h6>
                             </div>
 
                         </div>
-                        <h6 class="recom ms-4 mb-4 mt-2" style="color:#A5A5A5;">Recomendada por +3 alunes</h6>
-                        <hr class="mt-3">
-                        <h6 class="ms-4 p-1" style="color:#A5A5A5;">Odeio meu trabalho e minha vida é sobre isso , odeio
-                            também essas crianças fake
-                            tudo artista
-                            mirim , odeio muito #gratidão #suicidio.</h6>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-postagensPorMateria" role="tabpanel"
+                        aria-labelledby="v-pills-postagensPorMateria-tab">
+
+
+                        <div class="col-lg  mb-3 profile justify-content-center mt-1"
+                            style="border: 3px solid #262626;">
+
+
+                            <div class="post_body mt-3 mb-3" style="width:auto;border: 5px solid  #262626;"
+                                *ngFor='let item of tema.postagem'>
+                                <div class="container d-flex justify-content-start align-items-center"
+                                    style="background-color: #303030;width:100%;">
+                                    <img class="img-thumbnail" src="{{foto}}" alt="user">
+                                    <h5 class="p-1 mt-2 ms-2">{{nome}}</h5>
+
+
+                                </div>
+                                <div class="post_image ms-1 d-flex justify-content-center">
+                                    <img src='{{item.foto}}' alt="example image" style="max-width:100%;">
+                                </div>
+                                <div class="icons_functions d-flex align-items-center justify-content-start">
+                                    <div class="p-3 ms-3">
+                                        <a href="#" class="me-4">
+                                            <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="2.1875" y="10.9375" width="0.875" height="16.625" fill="white"
+                                                    stroke="white" stroke-width="0.875" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M20.1248 11.9583V3.20547C20.1248 2.40164 19.4732 1.75 18.6694 1.75C17.9756 1.75 17.3782 2.23971 17.2422 2.92003L16.865 4.80604C16.0491 8.88523 12.9771 12.081 9.0415 13.1165V25.807C9.0415 26.4048 9.49344 26.9059 10.0881 26.9675L25.9223 28.6055C26.5301 28.6684 27.0835 28.2516 27.1909 27.6501L29.748 13.3301C29.8757 12.615 29.3259 11.9583 28.5995 11.9583H20.1248ZM7.2915 11.6667C11.1998 11.2324 14.3777 8.31883 15.1489 4.46284L15.5261 2.57683C15.8258 1.07851 17.1414 0 18.6694 0C20.4397 0 21.8748 1.43514 21.8748 3.20547V10.2083H28.5995C30.4155 10.2083 31.79 11.85 31.4708 13.6377L28.9136 27.9577C28.6451 29.4615 27.2618 30.5034 25.7423 30.3462L9.90805 28.7082C8.42135 28.5544 7.2915 27.3016 7.2915 25.807V11.6667Z"
+                                                    fill="white" />
+                                            </svg>
+                                        </a>
+                                        <button type="button" class="btn" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal" data-bs-whatever="@mdo"
+                                            style="background-color: none;border:none;">
+                                            <svg width="33" height="30" viewBox="0 0 33 30" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M31.1083 2.78033L20.9667 12H29.7V13.5H18.15V3H19.8V10.9393L29.9416 1.71967L31.1083 2.78033ZM12.0332 18H3.29996V16.5H14.85V27H13.2V19.0607L3.05833 28.2803L1.8916 27.2197L12.0332 18Z"
+                                                    fill="white" />
+                                            </svg>
+                                        </button>
+
+                                    </div>
+                                    <div class="tags d-flex ms-5 justify-content-between" style="min-width:27%;">
+                                        <h6 class="tag p-2">
+                                            {{post.tema}}
+                                        </h6>
+                                    </div>
+
+                                </div>
+                                <hr class="mt-3">
+                                <h6 class="ms-4 p-1" style="color:#A5A5A5;">
+                                    {{item.texto}}
+                                </h6>
+                            </div>
+
+                        </div>
                     </div>
 
                 </div>
+
+
+
+
+
+
                 <div class="col-md information fixed-left">
                     <div class="perfil_information d-flex p-3 align-items-center">
                         <img class="img-thumbnail me-4" src="{{foto}}" alt="imagem do usuario"
                             style="height:6rem;width:6rem;">
                         <div class="{name_username}">
-                            <h2>{{nome}},</h2>
-                            <h6>vamos estudar hoje?
-                            </h6>
+                            <h2>{{nome}},<h6>vamos estudar hoje?</h6>
+                            </h2>
                         </div>
                     </div>
                     <div class="filter">
                         <h6 class="ms-3 mt-3" style="color:#A5A5A5;">Filtar profs por matérias</h6>
                     </div>
-                    <div class="form-check ms-3 mt-2">
+                    <div class="form-check ms-3 mt-2" *ngFor='let tema of listTemas'>
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                         <label class="form-check-label" for="flexCheckChecked">
-                            Inglês
+                            {{tema.descricao}}
                         </label>
                     </div>
 
-                    <div class="form-check ms-3 mt-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Português
-                        </label>
-                    </div>
-
-                    <div class="form-check ms-3 mt-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Ariana grande
-                        </label>
-                    </div>
 
                     <button type="button" class="btn btn-primary mt-3 ms-3" data-bs-toggle="modal"
                         data-bs-target="#postagemModal" data-bs-whatever="@mdo"
                         style="background-color: #FEB201;border:none;">Adicionar postagem</button>
 
 
-                        <br>
-                        <br>
+                    <br>
+                    <br>
 
 
                     <div div class="d-flex align-items-start">
-                        
+
                         <div class="nav flex-column nav-pills me-3 ms-3" id="v-pills-tab" role="tablist"
                             aria-orientation="vertical">
 
                             <button class="nav-link active" id="v-pills-todasPostagem-tab" data-bs-toggle="pill"
-                                data-bs-target="#v-pills-todasPostagem" type="button" role="tab" aria-controls="v-pills-todasPostagem"
-                                aria-selected="true">Todas as Postagens</button>
+                                data-bs-target="#v-pills-todasPostagem" type="button" role="tab"
+                                aria-controls="v-pills-todasPostagem" aria-selected="true">Todas as Postagens</button>
 
                             <button class="nav-link" id="v-pills-minhasPostagens-tab" data-bs-toggle="pill"
                                 data-bs-target="#v-pills-minhasPostagens" type="button" role="tab"
@@ -118,29 +243,13 @@
 
                             <button class="nav-link" id="v-pills-postagensPorMateria-tab" data-bs-toggle="pill"
                                 data-bs-target="#v-pills-postagensPorMateria" type="button" role="tab"
-                                aria-controls="v-pills-postagensPorMateria" aria-selected="false">Postagens por Matéria</button>
-                            
-                        </div>
-                        
-                        
-                        <div class="tab-content" id="v-pills-tabContent">
-                            
-                            <div class="tab-pane fade show active" id="v-pills-todasPostagem" role="tabpanel"
-                                aria-labelledby="v-pills-todasPostagem-tab">
-                            Todas as postagens
-                            </div>
-
-                            <div class="tab-pane fade" id="v-pills-minhasPostagens" role="tabpanel"
-                                aria-labelledby="v-pills-minhasPostagens-tab">
-                            Minhas Postagens
-                            </div>
-
-                            <div class="tab-pane fade" id="v-pills-postagensPorMateria" role="tabpanel"
-                                aria-labelledby="v-pills-postagensPorMateria-tab">
-                            Ponstagens Por Materia    
-                            </div>
+                                aria-controls="v-pills-postagensPorMateria" aria-selected="false">Postagens por
+                                Matéria</button>
 
                         </div>
+
+
+
                     </div>
 
                 </div>
@@ -148,61 +257,7 @@
             </div>
 
 
-            <div class="row">
 
-                <div class="col-lg me-2 profile d-flex justify-content-center">
-                    <div class="post_body" style="width: 100vw;">
-                        <div class="container d-flex justify-content-start align-items-center"
-                            style="background-color: #303030;width:100%;">
-                            <img class="img-thumbnail me-4" src="../../assets/img/giovana.png" alt="user">
-                            <h5 class="p-1 mt-2">Jorgito fake</h5>
-                        </div>
-                        <div class="post_image">
-                            <img src="https://images.unsplash.com/photo-1610210752267-525f2160a313?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
-                                alt="example image">
-                        </div>
-                        <div class="icons_functions d-flex align-items-center justify-content-start">
-                            <div class="p-3 ms-3">
-                                <a href="#" class="me-4">
-                                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="2.1875" y="10.9375" width="0.875" height="16.625" fill="white"
-                                            stroke="white" stroke-width="0.875" />
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M20.1248 11.9583V3.20547C20.1248 2.40164 19.4732 1.75 18.6694 1.75C17.9756 1.75 17.3782 2.23971 17.2422 2.92003L16.865 4.80604C16.0491 8.88523 12.9771 12.081 9.0415 13.1165V25.807C9.0415 26.4048 9.49344 26.9059 10.0881 26.9675L25.9223 28.6055C26.5301 28.6684 27.0835 28.2516 27.1909 27.6501L29.748 13.3301C29.8757 12.615 29.3259 11.9583 28.5995 11.9583H20.1248ZM7.2915 11.6667C11.1998 11.2324 14.3777 8.31883 15.1489 4.46284L15.5261 2.57683C15.8258 1.07851 17.1414 0 18.6694 0C20.4397 0 21.8748 1.43514 21.8748 3.20547V10.2083H28.5995C30.4155 10.2083 31.79 11.85 31.4708 13.6377L28.9136 27.9577C28.6451 29.4615 27.2618 30.5034 25.7423 30.3462L9.90805 28.7082C8.42135 28.5544 7.2915 27.3016 7.2915 25.807V11.6667Z"
-                                            fill="white" />
-                                    </svg>
-                                </a>
-                                <a href="#">
-                                    <svg width="33" height="30" viewBox="0 0 33 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M31.1083 2.78033L20.9667 12H29.7V13.5H18.15V3H19.8V10.9393L29.9416 1.71967L31.1083 2.78033ZM12.0332 18H3.29996V16.5H14.85V27H13.2V19.0607L3.05833 28.2803L1.8916 27.2197L12.0332 18Z"
-                                            fill="white" />
-                                    </svg>
-                                </a>
-                            </div>
-                            <div class="tags d-flex ms-5 justify-content-between" style="min-width:27%;">
-                                <h6 class="tag p-2">
-                                    Inglês aaaa
-                                </h6>
-                                <h6 class="tag p-2">
-                                    Português
-                                </h6>
-                            </div>
-
-                        </div>
-                        <h6 class="recom ms-4 mb-4 mt-2" style="color:#A5A5A5;">Recomendada por +3 alunes</h6>
-                        <hr class="mt-3">
-                        <h6 class="ms-4 p-1" style="color:#A5A5A5;">Odeio meu trabalho e minha vida é sobre isso , odeio
-                            também essas crianças fake
-                            tudo artista
-                            mirim , odeio muito #gratidão #suicidio.</h6>
-                    </div>
-
-                </div>
-
-            </div>
 
         </div>
     </div>
@@ -252,30 +307,38 @@
 
             </div>
             <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label for="title" class="col-form-label">Descrição</label>
-                        <input type="text" class="form-control" id="recipient-name">
-                    </div>
 
-                    <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Link da imagem:</label>
-                        <input type="text" class="form-control" id="image_link">
-                    </div>
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">titulo:</label>
+                    <input [(ngModel)]='post.titulo' type="text" class="form-control" id="image_link">
+                </div>
+                <div class="mb-3">
+                    <label for="title" class="col-form-label">Descrição</label>
+                    <input [(ngModel)]='post.texto' type="text" class="form-control" id="recipient-name">
+                </div>
 
-                    <div class="mb-3">
-                        <label for="message-text">Escolha um tema:</label>
-                        <select name="tema" id="tema" class="form-control">
-                            <option value="">TEMAS</option>
-                        </select>
-                    </div>
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Link da imagem:</label>
+                    <input [(ngModel)]='post.foto' type="text" class="form-control" id="image_link">
+                </div>
 
-                </form>
+                <div class="mb-3">
+                    <label for="message-text">Escolha um tema:</label>
+                    <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)="findByIdTema">
+                        <option value="">Escolha um tema</option>
+                        <option [(ngModel)]="idTema" *ngFor='let tema of listTemas' value="{{tema.id}}">
+                            {{tema.descricao}}</option>
+                    </select>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button (click)='postar()' data-bs-dismiss="modal" type="submit" class="btn text-light"
+                        style="background-color: #FEB201;">Postar</button>
+                </div>
+
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn text-light" style="background-color: #FEB201;">Postar</button>
-            </div>
+
         </div>
     </div>
 </div>

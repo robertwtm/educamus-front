@@ -20,6 +20,8 @@ import { ChatAlunoComponent } from './chat-aluno/chat-aluno.component';
 import { ChatProfComponent } from './chat-prof/chat-prof.component';
 import { MateriaEditComponent } from './edit/materia-edit/materia-edit.component';
 import { MateriaDeleteComponent } from './delete/materia-delete/materia-delete.component';
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
+import { PostagemDeleteComponent } from './edit/postagem-delete/postagem-delete.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { MateriaDeleteComponent } from './delete/materia-delete/materia-delete.c
     ChatAlunoComponent,
     ChatProfComponent,
     MateriaEditComponent,
-    MateriaDeleteComponent
+    MateriaDeleteComponent,
+    PostagemEditComponent,
+    PostagemDeleteComponent
   ],
   imports: [
     BrowserModule,
