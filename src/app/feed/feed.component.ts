@@ -67,7 +67,7 @@ export class FeedComponent implements OnInit {
       this.postagem = resp;
     });
   }
-  
+
   verify(e: any) {}
 
   postar() {
@@ -76,7 +76,9 @@ export class FeedComponent implements OnInit {
     this.user.id = this.idUser;
     this.post.usuario = this.user;
 
-    console.log(this.post.usuario);
+    console.log(this.post.usuario.id);
+    console.log(this.post.tema.id);
+    console.log(this.post.tema.descricao);
     console.log(this.post.tema);
     console.log(this.post.foto);
     console.log(this.post.texto);
@@ -91,5 +93,4 @@ export class FeedComponent implements OnInit {
       this.getAllPostagens();
     });
   }
-
 }

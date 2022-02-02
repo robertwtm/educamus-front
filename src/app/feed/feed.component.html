@@ -10,6 +10,7 @@
 
                     <div class="tab-pane fade show active" id="v-pills-todasPostagem" role="tabpanel"
                         aria-labelledby="v-pills-todasPostagem-tab">
+                        <h1>Todas as postagens</h1>
 
 
                         <div class="col-lg  mb-3 profile justify-content-center mt-1"
@@ -54,7 +55,10 @@
                                     </div>
                                     <div class="tags d-flex ms-5 justify-content-between" style="min-width:27%;">
                                         <h6 class="tag p-2">
-                                            {{post.tema}}
+                                            {{item.data}}
+                                        </h6>
+                                        <h6 class="tag p-2">
+                                            {{item.data}}
                                         </h6>
                                     </div>
 
@@ -70,7 +74,7 @@
 
                     <div class="tab-pane fade" id="v-pills-minhasPostagens" role="tabpanel"
                         aria-labelledby="v-pills-minhasPostagens-tab">
-
+                        <h1>Minhas postagens</h1>
 
                         <div class="col-lg  mb-3 profile justify-content-center mt-1"
                             style="border: 3px solid #262626;">
@@ -78,14 +82,16 @@
 
                             <div class="post_body mt-3 mb-3" style="width:auto;border: 5px solid  #262626;"
                                 *ngFor='let item of user.postagem'>
+
                                 <div class="container d-flex justify-content-start align-items-center"
                                     style="background-color: #303030;width:100%;">
                                     <img class="img-thumbnail" src="{{foto}}" alt="user">
                                     <h5 class="p-1 mt-2 ms-2">{{nome}}</h5>
 
-                                    <a [routerLink]="['/postagem-edit', idUser]" class="text-info mr-3"
-                                        href="#">Editar</a> <a [routerLink]="['/postagem-delete', idUser]"
-                                        class="text-danger" href="#">Apagar</a>
+                                    <button [routerLink]="['/postagem-edit', item.id]"
+                                        class="text-light btn-success me-1">Editar</button>
+                                    <button class="text-light btn-danger"
+                                        [routerLink]="['/postagem-delete', item.id]">Apagar</button>
 
                                 </div>
                                 <div class="post_image ms-1 d-flex justify-content-center">
@@ -116,8 +122,11 @@
 
                                     </div>
                                     <div class="tags d-flex ms-5 justify-content-between" style="min-width:27%;">
+                                        <h6 class="tag p-2 me-1">
+                                            {{item.data}}
+                                        </h6>
                                         <h6 class="tag p-2">
-                                            {{post.tema}}
+                                            Matéria: {{item.tema.descricao}}
                                         </h6>
                                     </div>
 
@@ -134,10 +143,10 @@
 
                     <div class="tab-pane fade" id="v-pills-postagensPorMateria" role="tabpanel"
                         aria-labelledby="v-pills-postagensPorMateria-tab">
+                        <h1>Postagens por matérias</h1>
 
-
-                        <div class="col-lg  mb-3 profile justify-content-center mt-1"
-                            style="border: 3px solid #262626;">
+                        <div class="col-lg  mb-3 profile justify-content-center mt-1" style="border: 3px solid #262626;"
+                            *ngFor='let tema of listTemas'>
 
 
                             <div class="post_body mt-3 mb-3" style="width:auto;border: 5px solid  #262626;"
@@ -177,14 +186,18 @@
 
                                     </div>
                                     <div class="tags d-flex ms-5 justify-content-between" style="min-width:27%;">
+                                        <h6 class="tag p-2 me-1">
+                                            {{item.data}}
+                                        </h6>
                                         <h6 class="tag p-2">
-                                            {{post.tema}}
+                                            Matéria : {{tema.descricao}}
                                         </h6>
                                     </div>
 
                                 </div>
                                 <hr class="mt-3">
                                 <h6 class="ms-4 p-1" style="color:#A5A5A5;">
+
                                     {{item.texto}}
                                 </h6>
                             </div>
@@ -237,8 +250,8 @@
                                 data-bs-target="#v-pills-todasPostagem" type="button" role="tab"
                                 aria-controls="v-pills-todasPostagem" aria-selected="true">Todas as Postagens</button>
 
-                            <button class="nav-link" id="v-pills-minhasPostagens-tab" data-bs-toggle="pill"
-                                data-bs-target="#v-pills-minhasPostagens" type="button" role="tab"
+                            <button (click)='findByIdUser()' class="nav-link" id="v-pills-minhasPostagens-tab"
+                                data-bs-toggle="pill" data-bs-target="#v-pills-minhasPostagens" type="button" role="tab"
                                 aria-controls="v-pills-minhasPostagens" aria-selected="false">Minhas Postagens</button>
 
                             <button class="nav-link" id="v-pills-postagensPorMateria-tab" data-bs-toggle="pill"

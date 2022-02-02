@@ -8,35 +8,27 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
+  id = environment.id;
+  perfil = environment.tipo;
 
-  id = environment.id
-  perfil = environment.tipo
-  
-  constructor(
-    private router: Router
-  ) { }
+  constructor(private router: Router) {}
 
-  ngOnInit(){ 
+  ngOnInit() {}
+
+  sair() {
+    this.router.navigate(['/initial']);
+    environment.token = '';
+    environment.nome = '';
+    environment.foto = '';
+    environment.id = 0;
+    environment.tipo = '';
   }
 
-  sair(){
-    this.router.navigate(['/initial'])
-    environment.token = ''
-    environment.nome = ''
-    environment.foto = ''
-    environment.id = 0
-    environment.tipo = ''
-  }
-
-  alunoProf(){
-    if(this.perfil == 'adm'){
-      this.router.navigate(['/perfilProf', this.id])
-    }
-    else{
-      this.router.navigate(['/perfilAluno', this.id])
+  alunoProf() {
+    if (this.perfil == 'adm') {
+      this.router.navigate(['/perfilProf', this.id]);
+    } else {
+      this.router.navigate(['/perfilAluno', this.id]);
     }
   }
-
-
 }
-

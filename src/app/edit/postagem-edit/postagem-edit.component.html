@@ -1,32 +1,50 @@
 <app-menu></app-menu>
 
-<div class="container mt-5 mb-5">
 
-    <div class="row">
+<main>
+    <div class="mt-5 mb-5">
+
         <div class="col-md-12">
             <h1 class="text-center text-secondary">Atualizar Materia</h1>
         </div>
-    </div>
 
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-6">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md">
 
-            <div class="form-group">
-                <label for="descricao">Descricao Postagem</label>
-                <input type="textarea" class="form-control" id="descricao" [(ngModel)]='postagem.texto'>
-            </div>
+                <div class="form-group">
+                    <label for="titulo">Titulo Postagem</label>
+                    <input type="textarea" class="form-control" id="descricao" [(ngModel)]='postagem.titulo'
+                        value={{postagem.titulo}}>
+                </div>
 
-            <div class="form-group">
-                <label for="descricao">Imagem Postagem</label>
-                <input type="textarea" class="form-control" id="descricao" [(ngModel)]='postagem.foto'>
-            </div>
+                <div class="form-group">
+                    <label for="descricao">Descricao Postagem</label>
+                    <input type="textarea" class="form-control" id="descricao" [(ngModel)]='postagem.texto'
+                        value={{postagem.texto}}>
+                </div>
 
-            <div class="d-flex justify-content-center">
-                <button class="btn btn-danger mr-4" routerLink='/materiasEdit'>Cancelar</button>
-                <button class="btn btn-success">Atualizar</button>
+                <div class="form-group">
+                    <label for="descricao">Imagem Postagem</label>
+                    <input type="textarea" class="form-control" id="descricao" [(ngModel)]='postagem.foto'>
+                </div>
+
+                <div class="form-group">
+                    <label for="titulo">Escolha um tema :</label>
+                    <select name="tema" id="tema" class="form-control" [(ngModel)]="idTema" (change)='findByIdTema()'>
+                        <option value="">Escolha um tema</option>
+                        <option *ngFor="let item of listaTemas" value="{{item.id}}">
+                            {{item.descricao}}
+                        </option>
+                    </select>
+
+                    <div class="d-flex justify-content-center mt-3">
+                        <button class="btn btn-danger me-4" routerLink='/feed'>Cancelar</button>
+                        <button class="btn btn-success" (click)='atualizar()'>Atualizar</button>
+                    </div>
+
+                </div>
             </div>
 
         </div>
     </div>
-
-</div>
+</main>
