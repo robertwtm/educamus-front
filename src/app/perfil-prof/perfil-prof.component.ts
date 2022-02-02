@@ -13,6 +13,7 @@ export class PerfilProfComponent implements OnInit {
 
   foto = environment.foto
   nome = environment.nome
+  perfil = environment.tipo
   user: User = new User
   idUser: number
   tipoUser: string
@@ -31,6 +32,7 @@ export class PerfilProfComponent implements OnInit {
 
     this.idUser = this.route.snapshot.params['id']
     this.findByIdUser(this.idUser)
+
   }
 
   atualizar(){
