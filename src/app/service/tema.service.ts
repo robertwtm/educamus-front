@@ -22,6 +22,10 @@ export class TemaService {
     getByIdMateria(id: number): Observable<Tema>{
       return this.http.get<Tema>(`https://app-educamus.herokuapp.com/temas/${id}`, this.token)
     }
+
+    getByDescricao(descricao: string): Observable<Tema[]>{
+      return this.http.get<Tema[]>(`https://app-educamus.herokuapp.com/temas/descricao/${descricao}`, this.token)
+    }
   
     postMateria(tema: Tema): Observable<Tema>{
       return this.http.post<Tema>('https://app-educamus.herokuapp.com/temas', tema, this.token)
