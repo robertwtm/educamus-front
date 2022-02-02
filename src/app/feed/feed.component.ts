@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
@@ -18,6 +19,7 @@ export class FeedComponent implements OnInit {
   nome = environment.nome;
   foto = environment.foto;
   idUser = environment.id;
+  like: number;
 
   idTema: number;
   listTemas: Tema[];
@@ -32,7 +34,8 @@ export class FeedComponent implements OnInit {
     private router: Router,
     private temaService: TemaService,
     private postagemService: PostagemService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alerta: AlertasService
   ) {}
 
   ngOnInit() {
@@ -40,8 +43,14 @@ export class FeedComponent implements OnInit {
       alert('Seu token expirou. Faça o login novamente!');
       this.router.navigate(['/signIn']);
     }
+    this.like = 3;
+
     this.getallTemas();
     this.getAllPostagens();
+  }
+
+  addLike() {
+    this.like++;
   }
 
   findByIdTema() {
@@ -87,7 +96,7 @@ export class FeedComponent implements OnInit {
     this.postagemService.postPostagem(this.post).subscribe((resp: Postagem) => {
       console.log(this.post);
       this.post = resp;
-      alert('Postagem realizada com sucesso!');
+      this.alerta.showAlertSuccess('Postagem realizada com sucesso!');
       this.post = new Postagem();
 
       this.getAllPostagens();
