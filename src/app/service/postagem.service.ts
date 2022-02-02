@@ -28,6 +28,13 @@ export class PostagemService {
     );
   }
 
+  getByTituloPostagem(titulo: string): Observable<Postagem[]>{
+    return this.http.get<Postagem[]>(
+      `https://app-educamus.herokuapp.com/postagem/titulo/${titulo}`,
+      this.token
+      );
+  }
+
   postPostagem(postagem: Postagem): Observable<Postagem> {
     return this.http.post<Postagem>(
       'https://app-educamus.herokuapp.com/postagem',
