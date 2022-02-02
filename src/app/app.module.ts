@@ -22,7 +22,10 @@ import { MateriaEditComponent } from './edit/materia-edit/materia-edit.component
 import { MateriaDeleteComponent } from './delete/materia-delete/materia-delete.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './edit/postagem-delete/postagem-delete.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
+import { OrderModule } from 'ngx-order-pipe';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -41,19 +44,24 @@ import { PostagemDeleteComponent } from './edit/postagem-delete/postagem-delete.
     MateriaEditComponent,
     MateriaDeleteComponent,
     PostagemEditComponent,
-    PostagemDeleteComponent
+    PostagemDeleteComponent,
+    AlertasComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    OrderModule,
+    ModalModule.forRoot(),
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
