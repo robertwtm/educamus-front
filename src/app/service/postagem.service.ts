@@ -28,18 +28,18 @@ export class PostagemService {
     );
   }
 
-  postPostagem(post: Postagem): Observable<Postagem> {
+  postPostagem(postagem: Postagem): Observable<Postagem> {
     return this.http.post<Postagem>(
       'https://app-educamus.herokuapp.com/postagem',
-      post,
+      postagem,
       this.token
     );
   }
 
-  putPostagem(post: Postagem): Observable<Postagem> {
+  putPostagem(postagem: Postagem): Observable<Postagem> {
     return this.http.put<Postagem>(
       'https://app-educamus.herokuapp.com/postagem',
-      post,
+      postagem,
       this.token
     );
   }

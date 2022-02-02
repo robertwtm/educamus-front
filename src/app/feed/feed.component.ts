@@ -67,7 +67,7 @@ export class FeedComponent implements OnInit {
       this.postagem = resp;
     });
   }
-
+  
   verify(e: any) {}
 
   postar() {
@@ -91,4 +91,5 @@ export class FeedComponent implements OnInit {
       this.getAllPostagens();
     });
   }
+
 }
