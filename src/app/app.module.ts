@@ -6,6 +6,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
+
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
@@ -23,9 +26,6 @@ import { MateriaDeleteComponent } from './delete/materia-delete/materia-delete.c
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './edit/postagem-delete/postagem-delete.component';
 import { AlertasComponent } from './alertas/alertas.component';
-
-import { OrderModule } from 'ngx-order-pipe';
-import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -53,8 +53,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    OrderModule,
     ModalModule.forRoot(),
+    OrderModule
   ],
   providers: [
     {

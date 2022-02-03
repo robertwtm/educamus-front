@@ -4,11 +4,12 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 
+
 @Injectable({
   providedIn: 'root',
 })
 export class PostagemService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token),
@@ -28,11 +29,10 @@ export class PostagemService {
     );
   }
 
-  getByTituloPostagem(titulo: string): Observable<Postagem[]>{
+  getByTituloPostagem(titulo: string): Observable<Postagem[]> {
     return this.http.get<Postagem[]>(
       `https://app-educamus.herokuapp.com/postagem/titulo/${titulo}`,
-      this.token
-      );
+       this.token)
   }
 
   postPostagem(postagem: Postagem): Observable<Postagem> {
