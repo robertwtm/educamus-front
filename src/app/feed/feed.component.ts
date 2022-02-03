@@ -60,7 +60,7 @@ export class FeedComponent implements OnInit {
   }
 
   findByIdTema() {
-    this.temaService.getByIdMateria(this.idTema).subscribe((resp: any) => {
+    this.temaService.getByIdMateria(this.idTema).subscribe((resp: Tema) => {
       this.tema = resp;
     });
   }
@@ -82,8 +82,6 @@ export class FeedComponent implements OnInit {
       this.postagem = resp;
     });
   }
-
-  verify(e: any) {}
 
   postar() {
     this.tema.id = this.idTema;
@@ -108,12 +106,8 @@ export class FeedComponent implements OnInit {
       this.getAllPostagens();
     });
   }
-
-
-
-
   
-
+  
   findByTituloPostagem(){
     if(this.tituloPost == ''){
       this.getAllPostagens()
