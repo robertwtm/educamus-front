@@ -5,8 +5,8 @@
 
         <div class="row">
 
-            <div class="col mt-5 p-5">
-                <svg width="630" height="550" viewBox="0 0 636 715" fill="none" xmlns="http://www.w3.org/2000/svg"
+            <div class="col mt-5 p-1">
+                <svg width="830" height="750" viewBox="0 0 636 715" fill="none" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
                     <path
                         d="M249.642 112.212C247.146 110.324 244.777 108.229 242.553 105.918C231.261 94.227 225.03 78.6725 225 62.108C224.97 45.548 231.151 29.967 242.404 18.236C253.653 6.50506 268.633 0.0221615 284.573 0.000110797C300.508 -0.0307601 315.509 6.39039 326.801 18.0861C329.254 20.6219 329.258 24.7498 326.818 27.2944C324.372 29.8391 320.412 29.8347 317.95 27.3121C309.036 18.0728 297.188 13.0056 284.594 13.0232C272.004 13.0541 260.177 18.1654 251.289 27.44C242.4 36.7012 237.518 49.0099 237.539 62.0904C237.561 75.1752 242.489 87.4663 251.407 96.6967C260.322 105.945 272.173 111.008 284.764 110.981C297.358 110.959 309.189 105.839 318.073 96.5732C320.514 94.0241 324.479 94.0286 326.941 96.5556C329.39 99.0958 329.398 103.219 326.958 105.764C315.704 117.499 300.724 123.973 284.789 124C271.982 124.031 259.791 119.894 249.642 112.212Z"
@@ -124,19 +124,20 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-10">
 
-                        <h1 class="text-center">Cadastro</h1>
+                        <h1 class="text-center" style="color:#feb201;">Cadastro</h1>
 
                         <div class="form-group">
                             <label for="nome" class=" mb-2">Nome</label>
-                            <input [(ngModel)]='user.nome' class="form-control mt-2" type="text" name="nome" id="nome" placeholder="Seu nome" >
+                            <input [(ngModel)]='user.nome' class="form-control mt-2" type="text" name="nome" id="nome"
+                                placeholder="Seu nome">
                         </div>
 
                         <br>
 
                         <div class="form-group">
                             <label for="usuario text-center mb-2">Usuário</label>
-                            <input [(ngModel)]='user.usuario' class="form-control mt-2" type="text" name="usuario" id="usuario"
-                                placeholder="Seu usuário">
+                            <input [(ngModel)]='user.usuario' class="form-control mt-2" type="text" name="usuario"
+                                id="usuario" placeholder="Seu usuário">
                         </div>
 
                         <br>
@@ -151,16 +152,16 @@
 
                         <div class="form-group">
                             <label for="senha mb-2">Senha</label>
-                            <input (input)='confirmSenha($event)' class="form-control mt-2" type="password" name="senha" id="senha"
-                                placeholder="Sua senha">
+                            <input (input)='confirmSenha($event)' class="form-control mt-2" type="password" name="senha"
+                                id="senha" placeholder="Sua senha">
                         </div>
 
                         <br>
 
                         <div class="form-group">
                             <label for="confirmSenha mb-2">Confirmar Senha</label>
-                            <input [(ngModel)]='user.senha' class="form-control mt-2" type="password" name="confirmSenha" id="confirmSenha"
-                                placeholder="Confirme sua senha">
+                            <input [(ngModel)]='user.senha' class="form-control mt-2" type="password"
+                                name="confirmSenha" id="confirmSenha" placeholder="Confirme sua senha">
                         </div>
 
                         <br>
@@ -169,7 +170,7 @@
                             <label for="tipo mb-2">Tipo de Usuário</label>
                             <select class="form-control mb-2" name="tipo" style=" width:70%;
                             margin:auto;
-                            padding:0.7rem;" id="tipo mt-2" (change)='tipoUser($event)' >
+                            padding:0.7rem;" id="tipo mt-2" (change)='tipoUser($event)'>
                                 <option>Selecione um tipo de usuário:</option>
                                 <option value="normal">Normal</option>
                                 <option value="adm">Administrador</option>
@@ -180,7 +181,8 @@
 
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-outline-light " routerLink="/initial">Cancelar</button>
-                            <button type="submit" class="btn btn-outline-light mr-4" (click)='cadastrar()'>Cadastrar</button>
+                            <button type="submit" class="btn btn-outline-light mr-4"
+                                (click)='cadastrar()'>Cadastrar</button>
                         </div>
 
                     </div>
