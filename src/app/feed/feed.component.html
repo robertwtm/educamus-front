@@ -13,6 +13,20 @@
                         <h1>Todas as postagens</h1>
 
 
+
+                        <div class="row d-flex">
+                            <div class="col-md-4">
+                                <div class="form-group mb-5">
+                                    <input type="text" class="form-control" id="tituloPesquisa"
+                                        placeholder="Digite um titulo para pesquisar" [(ngModel)]='tituloPost'
+                                        (keyup)='findByTituloPostagem()'>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
                         <div class="col-lg  mb-3 profile justify-content-center mt-1"
                             style="border: 3px solid #262626;">
                             <div class="post_body mt-3 mb-3" style="width:auto;border: 5px solid  #262626;"

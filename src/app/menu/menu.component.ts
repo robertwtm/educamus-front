@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { PostagemService } from '../service/postagem.service'; 
@@ -22,7 +23,8 @@ export class MenuComponent implements OnInit {
     private postagemService: PostagemService,
   ) {}
 
-  ngOnInit() {}
+  ngOnInit(
+  ) {}
 
   sair() {
     this.router.navigate(['/initial']);
@@ -57,4 +59,6 @@ export class MenuComponent implements OnInit {
       })
     }
   }
+
+
 }
