@@ -14,6 +14,10 @@ header {
   font-family: "Poppins", sans-serif;
 }
 
+span {
+  color: #feb201;
+}
+
 .btn {
   background-color: #fec802;
   padding: 0.5rem;
