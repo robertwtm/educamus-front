@@ -233,19 +233,22 @@
 
                             <button class="nav-link active" id="v-pills-todasPostagem-tab" data-bs-toggle="pill"
                                 data-bs-target="#v-pills-todasPostagem" type="button" role="tab"
-                                aria-controls="v-pills-todasPostagem" aria-selected="true" class="btn btn-warning">Todas as Postagens</button>
+                                aria-controls="v-pills-todasPostagem" aria-selected="true" class="btn btn-warning">Todas
+                                as Postagens</button>
 
                             <br>
 
                             <button (click)='findByIdUser()' class="nav-link" id="v-pills-minhasPostagens-tab"
                                 data-bs-toggle="pill" data-bs-target="#v-pills-minhasPostagens" type="button" role="tab"
-                                aria-controls="v-pills-minhasPostagens" aria-selected="false" class="btn btn-warning">Minhas Postagens</button>
+                                aria-controls="v-pills-minhasPostagens" aria-selected="false"
+                                class="btn btn-warning">Minhas Postagens</button>
 
                             <br>
 
                             <button class="nav-link" id="v-pills-postagensPorMateria-tab" data-bs-toggle="pill"
                                 data-bs-target="#v-pills-postagensPorMateria" type="button" role="tab"
-                                aria-controls="v-pills-postagensPorMateria" aria-selected="false" class="btn btn-warning" >Postagens por
+                                aria-controls="v-pills-postagensPorMateria" aria-selected="false"
+                                class="btn btn-warning">Postagens por
                                 Matéria</button>
 
                             <br>
@@ -333,10 +336,10 @@
 
                 <div class="mb-3">
                     <label for="message-text">Escolha um tema:</label>
-                    <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)="findByIdTema">
+                    <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)="findByIdTema()">
                         <option value="">Escolha um tema</option>
-                        <option [(ngModel)]="idTema" *ngFor='let tema of listTemas' value="{{tema.id}}">
-                            {{tema.descricao}}</option>
+                        <option [(ngModel)]="idTema" *ngFor='let temas of listTemas' value="{{temas.id}}">
+                            {{temas.descricao}}</option>
                     </select>
                 </div>
 
