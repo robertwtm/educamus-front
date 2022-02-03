@@ -29,6 +29,7 @@ export class FeedComponent implements OnInit {
   user: User = new User();
   titulo: string;
   texto: string;
+  tituloPost: string;
 
   constructor(
     private router: Router,
@@ -102,4 +103,20 @@ export class FeedComponent implements OnInit {
       this.getAllPostagens();
     });
   }
+
+
+
+
+  
+
+  findByTituloPostagem(){
+    if(this.tituloPost == ''){
+      this.getAllPostagens()
+    } else {
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[])=>{
+        this.postagem = resp
+      })
+    }
+  }
+
 }

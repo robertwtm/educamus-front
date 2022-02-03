@@ -23,8 +23,8 @@ export class TemaService {
       return this.http.get<Tema>(`https://app-educamus.herokuapp.com/temas/${id}`, this.token)
     }
 
-    getByDescricao(descricao: string): Observable<Tema[]>{
-      return this.http.get<Tema[]>(`https://app-educamus.herokuapp.com/temas/descricao/${descricao}`, this.token)
+    getByDescricaoMateria(descricao: string): Observable<Tema[]>{
+    return this.http.get<Tema[]>(`https://app-educamus.herokuapp.com/temas/descricao/${descricao}` , this.token)
     }
   
     postMateria(tema: Tema): Observable<Tema>{
@@ -38,7 +38,6 @@ export class TemaService {
     deleteMateria(id: number) {
       return this.http.delete(`https://app-educamus.herokuapp.com/temas/${id}`, this.token)
     }
-
 
 
 }
