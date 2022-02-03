@@ -29,6 +29,8 @@ export class FeedComponent implements OnInit {
   user: User = new User();
   titulo: string;
   texto: string;
+  key = 'data';
+  reverse = true;
 
   constructor(
     private router: Router,
