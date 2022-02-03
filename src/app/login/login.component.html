@@ -57,24 +57,26 @@
 
                         <div class="form-group">
                             <label for="usuario">Usuário</label>
-                            <input [(ngModel)]='userLogin.usuario' class="form-control" type="text" name="usuario" id="usuario"
-                                placeholder="Seu usuário">
+                            <input [(ngModel)]='userLogin.usuario' class="form-control" type="text" name="usuario"
+                                id="usuario" placeholder="Seu usuário">
                         </div>
 
                         <br>
 
                         <div class="form-group">
                             <label for="senha">Senha</label>
-                            <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+                            <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha"
+                                id="senha" placeholder="Sua senha">
                         </div>
 
                         <br>
 
                         <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-outline-light" (click)="entrar()">Entrar</button>
+                            <button type="submit" class="btn text-light" style="background-color:#feb201;"
+                                (click)="entrar()">Entrar</button>
                         </div>
 
-                            <hr>
+                        <hr>
 
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-outline-light" routerLink="/signUp">
