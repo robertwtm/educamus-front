@@ -19,6 +19,7 @@ export class PerfilProfComponent implements OnInit {
   idUser: number;
   tipoUser: string;
   confirmarSenha: string;
+  tipoUsuario: String;
 
   constructor(
     private auth: AuthService,
@@ -60,6 +61,10 @@ export class PerfilProfComponent implements OnInit {
 
   confirmSenha(event: any) {
     this.confirmarSenha = event.target.value;
+  }
+  
+  tipoAdmNormal(event: any) {
+    this.tipoUser = event.target.value;
   }
 
   findByIdUser(id: number) {

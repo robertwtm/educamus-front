@@ -34,6 +34,15 @@ export class MenuComponent implements OnInit {
     environment.id = 0;
     environment.tipo = '';
   }
+  
+
+  chatAlunoProf(){
+    if (this.perfil == 'adm') {
+      this.router.navigate(['/chatProf']);
+    } else {
+      this.router.navigate(['/chatAluno']);
+    }
+  }
 
   alunoProf() {
     if (this.perfil == 'adm') {
