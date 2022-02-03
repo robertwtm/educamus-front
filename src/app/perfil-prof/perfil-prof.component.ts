@@ -14,6 +14,7 @@ export class PerfilProfComponent implements OnInit {
   foto = environment.foto;
   nome = environment.nome;
   perfil = environment.tipo;
+  tipo = environment.tipo;
   user: User = new User();
   idUser: number;
   tipoUser: string;
@@ -51,7 +52,7 @@ export class PerfilProfComponent implements OnInit {
         environment.nome = '';
         environment.foto = '';
         environment.id = 0;
-
+        
         this.router.navigate(['/signIn']);
       });
     }
