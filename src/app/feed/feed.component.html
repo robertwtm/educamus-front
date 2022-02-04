@@ -19,7 +19,8 @@
                                 <div class="form-group mb-5">
                                     <input type="text" class="form-control" id="tituloPesquisa"
                                         placeholder="Digite um titulo para pesquisar" [(ngModel)]='tituloPost'
-                                        (keyup)='findByTituloPostagem()'>
+                                    <input type="text" class="form-control form-control-lg" id="tituloPesquisa"
+                                        placeholder="Digite um titulo para pesquisar" [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
                                 </div>
                             </div>
                         </div>
@@ -31,11 +32,15 @@
                             style="border: 3px solid #262626;">
                             <div class="post_body mt-3 mb-3" style="width:auto;border: 5px solid  #262626;"
                                 *ngFor='let item of postagem  | orderBy : key : reverse'>
+
+
                                 <div class="container d-flex justify-content-start align-items-center"
-                                    style="background-color: #303030;width:100%;"
-                                    *ngFor="let tema of tema.postagem | orderBy : key : reverse">
-                                    <img class="img-thumbnail" src="{{item.usuario.foto}}" alt="user">
-                                    <h5 class="p-1 mt-2 ms-2">{{item.usuario.nome}}</h5>
+                                    style="background-color: #303030;width:100%;">
+                                    <div class="d-flex align-items-center">
+                                        <img class="img-thumbnail" src="{{item.usuario.foto}}" alt="user">
+                                        <h5 class="p-1 mt-2 ms-2">{{item.usuario.nome}}</h5>
+                                    </div>
+
                                 </div>
                                 <div class="post_image ms-3 d-flex justify-content-center">
                                     <img src='{{item.foto}}' alt="example image" style="max-width:100%;">
@@ -51,7 +56,7 @@
                                                     d="M20.1248 11.9583V3.20547C20.1248 2.40164 19.4732 1.75 18.6694 1.75C17.9756 1.75 17.3782 2.23971 17.2422 2.92003L16.865 4.80604C16.0491 8.88523 12.9771 12.081 9.0415 13.1165V25.807C9.0415 26.4048 9.49344 26.9059 10.0881 26.9675L25.9223 28.6055C26.5301 28.6684 27.0835 28.2516 27.1909 27.6501L29.748 13.3301C29.8757 12.615 29.3259 11.9583 28.5995 11.9583H20.1248ZM7.2915 11.6667C11.1998 11.2324 14.3777 8.31883 15.1489 4.46284L15.5261 2.57683C15.8258 1.07851 17.1414 0 18.6694 0C20.4397 0 21.8748 1.43514 21.8748 3.20547V10.2083H28.5995C30.4155 10.2083 31.79 11.85 31.4708 13.6377L28.9136 27.9577C28.6451 29.4615 27.2618 30.5034 25.7423 30.3462L9.90805 28.7082C8.42135 28.5544 7.2915 27.3016 7.2915 25.807V11.6667Z"
                                                     fill="white" />
                                             </svg>
-                                            <p style="color:red">{{like}}</p>
+                                            <p style="color:yellow">{{like}}</p>
                                         </div>
 
 
@@ -70,15 +75,20 @@
                                     </div>
                                     <div class="tags d-flex ms-5 justify-content-between" style="min-width:27%;">
                                         <h6 class="tag p-2">
-                                            {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
+                                            {{item.data | date: 'dd/MM/yyyy'}}
                                         </h6>
-
+                                        <h6 class="tag p-2">
+                                            Matéria: {{item.tema.descricao}}
+                                        </h6>
                                     </div>
 
                                 </div>
                                 <hr class="mt-3">
-                                <h6 class="ms-4 p-1" style="color:#A5A5A5;">
-                                    {{item.texto}}
+                                <h5 class="ms-4" style="color:white;">
+                                    Titulo: {{item.titulo}}
+                                </h5>
+                                <h6 class="ms-4" style="color:white;">
+                                    Descrição: {{item.texto}}
                                 </h6>
                             </div>
 
@@ -126,14 +136,14 @@
                                                     d="M20.1248 11.9583V3.20547C20.1248 2.40164 19.4732 1.75 18.6694 1.75C17.9756 1.75 17.3782 2.23971 17.2422 2.92003L16.865 4.80604C16.0491 8.88523 12.9771 12.081 9.0415 13.1165V25.807C9.0415 26.4048 9.49344 26.9059 10.0881 26.9675L25.9223 28.6055C26.5301 28.6684 27.0835 28.2516 27.1909 27.6501L29.748 13.3301C29.8757 12.615 29.3259 11.9583 28.5995 11.9583H20.1248ZM7.2915 11.6667C11.1998 11.2324 14.3777 8.31883 15.1489 4.46284L15.5261 2.57683C15.8258 1.07851 17.1414 0 18.6694 0C20.4397 0 21.8748 1.43514 21.8748 3.20547V10.2083H28.5995C30.4155 10.2083 31.79 11.85 31.4708 13.6377L28.9136 27.9577C28.6451 29.4615 27.2618 30.5034 25.7423 30.3462L9.90805 28.7082C8.42135 28.5544 7.2915 27.3016 7.2915 25.807V11.6667Z"
                                                     fill="white" />
                                             </svg>
-                                            <p style="color:red">{{like}}</p>
+                                            <p style="color:yellow">{{like}}</p>
                                         </div>
 
 
                                     </div>
                                     <div class="tags d-flex ms-5 justify-content-between" style="min-width:27%;">
                                         <h6 class="tag p-2 me-1">
-                                            {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
+                                            {{item.data | date: 'dd/MM/yyyy'}}
                                         </h6>
                                         <h6 class="tag p-2">
                                             Matéria: {{item.tema.descricao}}
@@ -142,8 +152,11 @@
 
                                 </div>
                                 <hr class="mt-3">
+                                <h5 class="ms-4 p-1" style="color:white;">
+                                    Titulo: {{item.titulo}}
+                                </h5>
                                 <h6 class="ms-4 p-1" style="color:white;">
-                                    {{item.texto}}
+                                    Descrição: {{item.texto}}
                                 </h6>
                             </div>
 
@@ -163,9 +176,8 @@
                                     style="background-color: #303030;width:100%;">
                                     <img class="img-thumbnail" src="{{item.usuario.foto}}" alt="user">
                                     <h5 class="p-1 mt-2 ms-2">{{item.usuario.nome}}</h5>
-
-
                                 </div>
+
                                 <div class="post_image ms-1 d-flex justify-content-center">
                                     <img src='{{item.foto}}' alt="example image" style="max-width:100%;">
                                 </div>
@@ -180,7 +192,7 @@
                                                     d="M20.1248 11.9583V3.20547C20.1248 2.40164 19.4732 1.75 18.6694 1.75C17.9756 1.75 17.3782 2.23971 17.2422 2.92003L16.865 4.80604C16.0491 8.88523 12.9771 12.081 9.0415 13.1165V25.807C9.0415 26.4048 9.49344 26.9059 10.0881 26.9675L25.9223 28.6055C26.5301 28.6684 27.0835 28.2516 27.1909 27.6501L29.748 13.3301C29.8757 12.615 29.3259 11.9583 28.5995 11.9583H20.1248ZM7.2915 11.6667C11.1998 11.2324 14.3777 8.31883 15.1489 4.46284L15.5261 2.57683C15.8258 1.07851 17.1414 0 18.6694 0C20.4397 0 21.8748 1.43514 21.8748 3.20547V10.2083H28.5995C30.4155 10.2083 31.79 11.85 31.4708 13.6377L28.9136 27.9577C28.6451 29.4615 27.2618 30.5034 25.7423 30.3462L9.90805 28.7082C8.42135 28.5544 7.2915 27.3016 7.2915 25.807V11.6667Z"
                                                     fill="white" />
                                             </svg>
-                                            <p style="color:red">{{like}}</p>
+                                            <p style="color:yellow">{{like}}</p>
                                         </div>
 
                                     </div>
@@ -195,9 +207,11 @@
 
                                 </div>
                                 <hr class="mt-3">
-                                <h6 class="ms-4 p-1" style="color:#A5A5A5;">
-
-                                    {{item.texto}}
+                                <h5 class="ms-4 p-1" style="color:white;">
+                                    Titulo: {{item.titulo}}
+                                </h5>
+                                <h6 class="ms-4 p-1" style="color:white;">
+                                    Descrição: {{item.texto}}
                                 </h6>
                             </div>
 
@@ -221,11 +235,6 @@
                         </div>
                     </div>
 
-
-
-                    <button type="button" class="btn btn-primary mt-3 ms-3" data-bs-toggle="modal"
-                        data-bs-target="#postagemModal" data-bs-whatever="@mdo"
-                        style="background-color: #FEB201;border:none;">Adicionar postagem</button>
                     <br>
                     <br>
 
@@ -235,22 +244,35 @@
                         <div class="nav flex-column nav-pills me-3 ms-3" id="v-pills-tab" role="tablist"
                             aria-orientation="vertical">
 
+                            <br>
+
                             <button class="nav-link active" id="v-pills-todasPostagem-tab" data-bs-toggle="pill"
                                 data-bs-target="#v-pills-todasPostagem" type="button" role="tab"
-                                aria-controls="v-pills-todasPostagem" aria-selected="true">Todas as Postagens</button>
+                                aria-controls="v-pills-todasPostagem" aria-selected="true" class="btn btn-warning">Todas
+                                as Postagens</button>
+
+                            <br>
 
                             <button (click)='findByIdUser()' class="nav-link" id="v-pills-minhasPostagens-tab"
                                 data-bs-toggle="pill" data-bs-target="#v-pills-minhasPostagens" type="button" role="tab"
-                                aria-controls="v-pills-minhasPostagens" aria-selected="false">Minhas Postagens</button>
+                                aria-controls="v-pills-minhasPostagens" aria-selected="false"
+                                class="btn btn-warning">Minhas Postagens</button>
+
+                            <br>
 
                             <button class="nav-link" id="v-pills-postagensPorMateria-tab" data-bs-toggle="pill"
                                 data-bs-target="#v-pills-postagensPorMateria" type="button" role="tab"
-                                aria-controls="v-pills-postagensPorMateria" aria-selected="false">Postagens por
+                                aria-controls="v-pills-postagensPorMateria" aria-selected="false"
+                                class="btn btn-warning">Postagens por
                                 Matéria</button>
 
+                            <br>
+
+                            <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#postagemModal" data-bs-whatever="@mdo"
+                                class="btn btn-warning">Adicionar postagem</button>
+
                         </div>
-
-
 
                     </div>
 
@@ -328,8 +350,7 @@
                     <label for="message-text">Escolha um tema:</label>
                     <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)="findByIdTema">
                         <option value="">Escolha um tema</option>
-                        <option [(ngModel)]="idTema" *ngFor='let tema of listTemas' value="{{tema.id}}">
-                            {{tema.descricao}}</option>
+                        <option *ngFor='let tema of listTemas' value="{{tema.id}}">{{tema.descricao}}</option>
                     </select>
                 </div>
 
